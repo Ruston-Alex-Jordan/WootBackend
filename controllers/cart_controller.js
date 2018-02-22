@@ -14,7 +14,7 @@ module.exports = {
             }
             return subtotal;
         };
-        let email = config.token.card.email;
+        let email = config.token.email;
         let cardLastFour = config.token.card.last4;
         let addressCity = config.token.card.address_city;
         let addressLine1 = config.token.card.address_line1;
