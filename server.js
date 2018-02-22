@@ -19,7 +19,8 @@ massive( process.env.CONNECTION_STRING ).then(function (db) {
 app.get('/products', products_controller.getProducts);
 
 //put api calls
-app.put('/update-quantity', products_controller.updateProducts)
+app.put('/update-quantity', products_controller.updateProducts);
+
 
 const port = 8000;
 app.listen( port, () => { console.log(`Server listening on port ${port}.`); } );
