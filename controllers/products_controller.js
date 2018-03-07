@@ -28,7 +28,7 @@ module.exports = {
         });
     },
     
-    getElectric: (req, res, next) => {
+    getElectronic: (req, res, next) => {
         const db = req.app.get('db');
         db.get_electronic().then(products => {
             res.status(200).send(products)
