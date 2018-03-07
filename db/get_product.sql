@@ -1,1 +1,1 @@
-select * from products;
+select * from landing_products;
