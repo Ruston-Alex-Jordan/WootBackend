@@ -1,0 +1,1 @@
+select * from outdoor_products;
