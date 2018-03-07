@@ -1,1 +1,1 @@
-select * from electronic_products
+select * from outdoor_products;
