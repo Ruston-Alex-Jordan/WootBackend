@@ -17,5 +17,14 @@ module.exports = {
             .then( quantity => { res.status(200).send( quantity )})
         })
         
+    },
+
+    getOutdoor: (req, res, next) => {
+        const db = req.app.get('db');
+        db.get_outdoor().then(products => {
+            res.status(200).send(products)
+        }).catch ( err => {
+            res.status(500).send(err)
+        });
     }
 }
