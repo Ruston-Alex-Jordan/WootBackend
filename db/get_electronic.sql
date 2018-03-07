@@ -1,0 +1,1 @@
+select * from electronic_products;

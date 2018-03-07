@@ -18,7 +18,8 @@ massive( process.env.CONNECTION_STRING ).then(function (db) {
 
 //get api calls
 app.get('/products', products_controller.getProducts);
-app.get('/outdoor-products', products_controller.getOutdoor)
+app.get('/outdoor-products', products_controller.getOutdoor);
+app.get('/electronic-products', products_controller.getElectronic)
 
 //put api calls
 app.put('/update-quantity', products_controller.updateProducts);
