@@ -19,9 +19,8 @@ module.exports = {
         return cart.map(e => {
             let newQuantity = e.quantity - 1
             db.update_quantity([newQuantity, e.productid])
-            .then( quantity => { res.status(200).send( quantity )})
         })
-        
+        res.status(200).send('quantity!')
     },
 
     getOutdoor: (req, res, next) => {
