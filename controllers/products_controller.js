@@ -2,7 +2,12 @@ module.exports = {
     getProducts: (req, res, next) => {
         const db = req.app.get('db');
         db.get_product()
-            .then( products => { res.status(200).send(products); })
+            .then( products => { let product = products.map( e => {
+                e.cartQuantity = 0
+                return e
+            }) 
+            res.status(200).send(product)
+        })
             .catch( err => {
                 res.status(500).send(err);
             });
@@ -21,18 +26,24 @@ module.exports = {
 
     getOutdoor: (req, res, next) => {
         const db = req.app.get('db');
-        db.get_outdoor().then(products => {
-            res.status(200).send(products)
-        }).catch ( err => {
+        db.get_outdoor().then( products => { let product = products.map( e => {
+            e.cartQuantity = 0
+            return e
+        }) 
+        res.status(200).send(product)
+    }).catch ( err => {
             res.status(500).send(err)
         });
     },
     
     getElectronic: (req, res, next) => {
         const db = req.app.get('db');
-        db.get_electronic().then(products => {
-            res.status(200).send(products)
-        }).catch ( err => {
+        db.get_electronic().then( products => { let product = products.map( e => {
+            e.cartQuantity = 0
+            return e
+        }) 
+        res.status(200).send(product)
+    }).catch ( err => {
             res.status(500).send(err)
         });
     }
